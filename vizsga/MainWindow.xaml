@@ -1,0 +1,25 @@
+﻿<Window x:Class="vizsga.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vizsga"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="vizsga" Content="" HorizontalAlignment="Left" Height="31" Margin="53,21,0,0" VerticalAlignment="Top" Width="169"/>
+        <ListBox x:Name="nevLista" HorizontalAlignment="Left" Height="304" Margin="47,52,0,0" VerticalAlignment="Top" Width="175" />
+        <Button x:Name="sikerButton" Content="Sikeres vizsgát tett" HorizontalAlignment="Left" Height="35" Margin="310,52,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label x:Name="sikerLabel" Content="" HorizontalAlignment="Left" Height="26" Margin="495,52,0,0" VerticalAlignment="Top" Width="91"/>
+        <Button x:Name="eredmenyButton" Content="Eredmények állományba írása" HorizontalAlignment="Center" Height="36" Margin="0,104,0,0" VerticalAlignment="Top" Width="182"/>
+        <Label Content="Keresett tanuló" HorizontalAlignment="Left" Height="35" Margin="310,169,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="tanulo" HorizontalAlignment="Center" Height="30" Margin="0,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+        <Label Content="Legjobb eredménye:" HorizontalAlignment="Left" Height="44" Margin="340,263,0,0" VerticalAlignment="Top" Width="148"/>
+        <Label x:Name="legjobb" Content="" HorizontalAlignment="Left" Height="33" Margin="528,263,0,0" VerticalAlignment="Top" Width="84"/>
+        <Label Content="Leggyengébb eredmény:&#xA;" HorizontalAlignment="Left" Height="44" Margin="343,300,0,0" VerticalAlignment="Top" Width="148"/>
+        <Label x:Name="leggyengebb" Content="" HorizontalAlignment="Left" Height="33" Margin="540,300,0,0" VerticalAlignment="Top" Width="84"/>
+        <Label x:Name="vizsgaEredmeny" Content="" HorizontalAlignment="Left" Height="33" Margin="343,338,0,0" VerticalAlignment="Top" Width="186"/>
+
+
+    </Grid>
+</Window>
