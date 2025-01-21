@@ -26,12 +26,48 @@ namespace vizsga
                 path: @"..\..\..\src\adatok.txt",
                 encoding: Encoding.UTF8
                 );
-            while (!sr.EndOfStream) 
+            while (!sr.EndOfStream)
             {
                 vizsgazok.Add(new Vizsgazo(sr.ReadLine()));
             }
-
             sr.Close();
+
+            foreach (var item in vizsgazok)
+            {
+                nevLista.Items.Add(item.Nev);
+            }
+            vizsga.Content = $"{vizsgazok.Count} vizsgázó adatait beolvastuk";
+
+
+        }
+
+        private void sikerButton_Click(object sender, RoutedEventArgs e)
+        {
+            int sikeresVizsga = 0;
+            foreach (var item in vizsgazok)
+            {
+                if (item.IT > 0.50 && item.Programozas> 0.50 && item.HalozatA > 0.50 && item.HalozatB > 0.50 && item.HalozatC > 0.50 && item.HalozatD > 0.50 && item.SzobeliAngol > 0.50 && item.SzobeliIT > 0.50)
+                {
+                    sikeresVizsga++;
+                }
+            }
+
+            sikerLabel.Content = $"{sikeresVizsga} fő";
+
+        }
+
+        private void eredmenyButton_Click(object sender, RoutedEventArgs e)
+        {
+            using StreamWriter sw = new StreamWriter(path: @"..\..\..\src\vizsgaredmenyek.txt", append: false);
+
+            foreach (var tanulo in vizsgazok)
+            {
+                double vegeredmeny = tanulo.vegeredmeny(tanulo.HalozatC);
+                string erdemjegy = tanulo.erdemjegy(tanulo.HalozatC);
+
+                // Sor írása: név, végeredmény, érdemjegy tabulátorral elválasztva
+                sw.WriteLine($"{tanulo.Nev}\t{vegeredmeny:F2}\t{erdemjegy}");
+            }
         }
     }
 }

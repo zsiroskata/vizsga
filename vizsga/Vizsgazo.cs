@@ -60,7 +60,7 @@ namespace vizsga
             }
             else 
             {
-                szoveg = "elégedetlen";
+                szoveg = "elégtelen";
             }
 
 
