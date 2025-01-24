@@ -66,5 +66,15 @@ namespace vizsga
 
             return szoveg;
         }
+
+        public double LegjobbEredmeny()
+        {
+            return new List<double> { IT, Programozas, HalozatA, HalozatB, HalozatC, HalozatD, SzobeliAngol, SzobeliIT }.Max()*100;
+        }
+
+        public double LeggyengebbEredmeny()
+        {
+            return new List<double> { IT, Programozas, HalozatA, HalozatB, HalozatC, HalozatD, SzobeliAngol, SzobeliIT }.Min()*100;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -39,6 +40,8 @@ namespace vizsga
             vizsga.Content = $"{vizsgazok.Count} vizsgázó adatait beolvastuk";
 
 
+           
+
         }
 
         private void sikerButton_Click(object sender, RoutedEventArgs e)
@@ -65,9 +68,40 @@ namespace vizsga
                 double vegeredmeny = tanulo.vegeredmeny(tanulo.HalozatC);
                 string erdemjegy = tanulo.erdemjegy(tanulo.HalozatC);
 
-                // Sor írása: név, végeredmény, érdemjegy tabulátorral elválasztva
                 sw.WriteLine($"{tanulo.Nev}\t{vegeredmeny:F2}\t{erdemjegy}");
             }
+
+            sw.Close();
         }
+
+        private void keresBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                foreach (var item in vizsgazok)
+                {
+                    if (item.Nev.ToLower().Contains(tanulo.Text.ToLower()))
+                    {
+                        legjobb.Content = $"{item.LegjobbEredmeny()}%";
+                        leggyengebb.Content = $"{item.LeggyengebbEredmeny()}%";
+
+                        if (item.LeggyengebbEredmeny() >= 0.51)
+                        {
+                            vizsgaEredmeny.Content = "Sikeres vizsgát tett!";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nem szerepel ilyen név a listában!");
+                        break;
+                    }
+               
+                }
+
+            }
+
+        }
+
+      
     }
 }

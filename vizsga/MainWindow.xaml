@@ -13,7 +13,7 @@
         <Label x:Name="sikerLabel" Content="" HorizontalAlignment="Left" Height="26" Margin="495,52,0,0" VerticalAlignment="Top" Width="91"/>
         <Button x:Name="eredmenyButton" Content="Eredmények állományba írása" HorizontalAlignment="Center" Height="36" Margin="0,104,0,0" VerticalAlignment="Top" Width="182" Click="eredmenyButton_Click"/>
         <Label Content="Keresett tanuló" HorizontalAlignment="Left" Height="35" Margin="310,169,0,0" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="tanulo" HorizontalAlignment="Center" Height="30" Margin="0,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+        <TextBox x:Name="tanulo" HorizontalAlignment="Center" Height="30" Margin="0,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" KeyDown="keresBox_KeyDown"/>
         <Label Content="Legjobb eredménye:" HorizontalAlignment="Left" Height="44" Margin="340,263,0,0" VerticalAlignment="Top" Width="148"/>
         <Label x:Name="legjobb" Content="" HorizontalAlignment="Left" Height="33" Margin="528,263,0,0" VerticalAlignment="Top" Width="84"/>
         <Label Content="Leggyengébb eredmény:&#xA;" HorizontalAlignment="Left" Height="44" Margin="343,300,0,0" VerticalAlignment="Top" Width="148"/>
